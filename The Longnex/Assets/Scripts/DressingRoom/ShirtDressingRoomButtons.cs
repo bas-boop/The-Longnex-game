@@ -18,7 +18,7 @@ public class ShirtDressingRoomButtons : MonoBehaviour
     public void NextItem()//Omhoog knop
     {
         currentItem.SetActive(false);
-        _index = _index + 1;
+        _index += 1;
         if (_index == shirts.Count)
             _index = _index = 0;
 

@@ -23,14 +23,17 @@ public class HeadDressingRoomButtons : MonoBehaviour
     public void NextItem()
     {
         currentItem.SetActive(false);
-        _index = _index + 1;
+        _index += 1;
         if (currentItem.CompareTag("lockedItem"))
         {
+            if (_index == head.Count)
+                _index = 0 - 1;
             currentItem.SetActive(false);
-            _index =+ 1;
+            _index += 1;
+            currentItem = head[_index];
         }
         if (_index == head.Count)
-            _index = _index = 0;
+            _index = 0;
 
         currentItem = head[_index];
         currentItem.SetActive(true);
@@ -44,7 +47,8 @@ public class HeadDressingRoomButtons : MonoBehaviour
         if (currentItem.CompareTag("lockedItem"))
         {
             currentItem.SetActive(false);
-            _index =- 1;
+            _index -= 1;
+            currentItem = head[_index];
         }
         if (_index < 0)
             _index = head.Count - 1;

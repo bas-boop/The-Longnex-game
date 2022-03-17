@@ -310,7 +310,6 @@ MonoBehaviour:
   - {fileID: 569469478}
   - {fileID: 617834741}
   currentItem: {fileID: 0}
-  nextItem: {fileID: 0}
 --- !u!4 &80333527
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1246,7 @@ GameObject:
   - component: {fileID: 617834743}
   m_Layer: 0
   m_Name: hat_16
-  m_TagString: Untagged
+  m_TagString: lockedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3102,7 +3101,7 @@ GameObject:
   - component: {fileID: 1389574074}
   m_Layer: 0
   m_Name: Nothing
-  m_TagString: unlockedItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3386,7 +3385,7 @@ GameObject:
   - component: {fileID: 1726505019}
   m_Layer: 0
   m_Name: hat_5
-  m_TagString: Untagged
+  m_TagString: lockedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
