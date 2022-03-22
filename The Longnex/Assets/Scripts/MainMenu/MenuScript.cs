@@ -31,20 +31,20 @@ public class MenuScript : MonoBehaviour
         leftSpeed = 200;
         rightSpeed = 200;
         panels = GameObject.FindGameObjectsWithTag("Games");
-        location = 800;
+        location = 820;
         for (int i = 1; i < panels.Length; i++)
         {
             if (panel)
             {
                 panels[i].transform.Translate(Vector2.right * location);
-                location += 800;
+                location += 820;
                 if (i == panels.Length - 1)
                 {
                     Debug.Log("oke");
                     panels[i] = GameObject.Find("last game");
                     panels[i].tag = ("Games");
                     Debug.Log(panels[i]);
-                    panels[i].transform.Translate(Vector2.left * 800);
+                    panels[i].transform.Translate(Vector2.left * 820);
 
                     i--;
 
@@ -59,7 +59,7 @@ public class MenuScript : MonoBehaviour
         }
         for (int i = 4; i < panels.Length; i++)
         {
-            canMoveRight += 4;
+            canMoveRight += 4.15f;
         }
 
     }
@@ -107,7 +107,7 @@ public class MenuScript : MonoBehaviour
                 for (int e = 2; e < panels.Length; e++)
                 {
                     Debug.Log(e);
-                    canMoveRight += 4;
+                    canMoveRight += 4.15f;
                 }
                 moveAllLeft = false;
 
@@ -123,7 +123,7 @@ public class MenuScript : MonoBehaviour
                 for (int e = 2; e < panels.Length; e++)
                 {
                     Debug.Log(e);
-                    canMoveLeft += 4;
+                    canMoveLeft += 4.15f;
                 }
                 moveAllRight = false;
 
