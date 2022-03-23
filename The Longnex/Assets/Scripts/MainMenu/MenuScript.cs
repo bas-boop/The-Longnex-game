@@ -8,7 +8,6 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField] public GameObject[] panels;
     [SerializeField] private float location;
-
     [Header("moving")]
     [SerializeField] private float leftSpeed;
     [SerializeField] private float rightSpeed;
@@ -40,10 +39,9 @@ public class MenuScript : MonoBehaviour
                 location += 820;
                 if (i == panels.Length - 1)
                 {
-                    Debug.Log("oke");
+
                     panels[i] = GameObject.Find("last game");
                     panels[i].tag = ("Games");
-                    Debug.Log(panels[i]);
                     panels[i].transform.Translate(Vector2.left * 820);
 
                     i--;
@@ -51,7 +49,6 @@ public class MenuScript : MonoBehaviour
                     panels[i] = GameObject.Find("Game1 copy");
                     panels[i].tag = ("Games");
                     panels[i].transform.Translate(Vector2.right * location);
-                    Debug.Log(panels[i]);
                     placeextrapanels();
 
                 }
@@ -66,7 +63,6 @@ public class MenuScript : MonoBehaviour
     private void Update()
     {
         moving();
-        looping();
     }
     private void moving()
     {
@@ -106,7 +102,6 @@ public class MenuScript : MonoBehaviour
                 canMoveLeft = 0.0000001f;
                 for (int e = 2; e < panels.Length; e++)
                 {
-                    Debug.Log(e);
                     canMoveRight += 4.15f;
                 }
                 moveAllLeft = false;
@@ -122,7 +117,6 @@ public class MenuScript : MonoBehaviour
                 canMoveRight = 0.0000001f;
                 for (int e = 2; e < panels.Length; e++)
                 {
-                    Debug.Log(e);
                     canMoveLeft += 4.15f;
                 }
                 moveAllRight = false;
@@ -137,10 +131,6 @@ public class MenuScript : MonoBehaviour
             panel = false;
             panels = GameObject.FindGameObjectsWithTag("Games");
         }
-    }
-    private void looping()
-    {
-        
     }
 
 }

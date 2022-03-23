@@ -5,12 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MinigameSelection : MonoBehaviour
 {
-
+    private selectGame currentGame = selectGame.Game1;
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            SceneManager.LoadScene("Test");
+        }
+        Debug.Log(collision.collider.name);
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        switch (currentGame)
         {
-            SceneManager.LoadScene("Test", LoadSceneMode.Additive);
+            case selectGame.Game1:
+                break;
         }
+    }
+    private enum selectGame
+    {
+        Game1
     }
 }
