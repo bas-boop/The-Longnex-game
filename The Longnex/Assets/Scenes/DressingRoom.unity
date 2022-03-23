@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 569469480}
   m_Layer: 0
   m_Name: hat_15
-  m_TagString: lockedItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2166,7 +2166,7 @@ GameObject:
   - component: {fileID: 832692672}
   m_Layer: 0
   m_Name: hat_6
-  m_TagString: lockedItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4213,7 +4213,7 @@ GameObject:
   - component: {fileID: 1726505019}
   m_Layer: 0
   m_Name: hat_5
-  m_TagString: lockedItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

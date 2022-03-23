@@ -88,7 +88,7 @@ public class HeadDressingRoomButtons : MonoBehaviour
 
     class LockedItem
     {
-        public List<bool> hats;
+        public bool[] hats;
         //public bool hat0, hat1, hat2, hat3, hat4,hat5, hat6, hat7, hat8, hat9, hat10, hat11, hat12, hat13, hat14, hat15, hat16;
     }
 }
