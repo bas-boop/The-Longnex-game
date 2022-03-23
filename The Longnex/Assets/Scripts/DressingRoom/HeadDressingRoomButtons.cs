@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 using System;
 using System.Collections;
@@ -20,6 +21,8 @@ public class HeadDressingRoomButtons : MonoBehaviour
 
         _lock = GameObject.Find("LockH");
         _lock.SetActive(false);
+
+        itemTagging();
     }
     
     public void NextItem()
@@ -54,5 +57,38 @@ public class HeadDressingRoomButtons : MonoBehaviour
 
         currentItem = head[_index];
         currentItem.SetActive(true);
+    }
+
+    private void itemTagging()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/Json/LockedItems/lockedItems.json");
+        //Debug.Log(json);
+
+        LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
+        Debug.Log(loadedhead);
+
+        for (int i = 0; i < head.Count; i++)
+        {
+            if(loadedhead.hats[i])
+            {
+                head[i].tag = "lockedItem";
+            }else if (loadedhead.hats[i])
+            {
+                head[i].tag = "lockedItem";
+            }
+        }
+        /*if (!loadedhead.hat1)
+        {
+            head[1].tag = "unlockedItem";
+        }else if (loadedhead.hats1)
+        {
+            head[1].tag = "lockedItem";
+        }*/
+    }
+
+    class LockedItem
+    {
+        public List<bool> hats;
+        //public bool hat0, hat1, hat2, hat3, hat4,hat5, hat6, hat7, hat8, hat9, hat10, hat11, hat12, hat13, hat14, hat15, hat16;
     }
 }
