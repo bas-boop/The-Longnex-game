@@ -40,13 +40,13 @@ public class MenuScript : MonoBehaviour
                 if (i == panels.Length - 1)
                 {
 
-                    panels[i] = GameObject.Find("last game");
+                    panels[i] = GameObject.Find("LastGame");
                     panels[i].tag = ("Games");
                     panels[i].transform.Translate(Vector2.left * 820);
 
                     i--;
 
-                    panels[i] = GameObject.Find("Game1 copy");
+                    panels[i] = GameObject.Find("FirstGame");
                     panels[i].tag = ("Games");
                     panels[i].transform.Translate(Vector2.right * location);
                     placeextrapanels();

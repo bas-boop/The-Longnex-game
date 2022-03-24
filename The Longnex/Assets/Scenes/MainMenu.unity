@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 272058100}
   - component: {fileID: 272058099}
   - component: {fileID: 272058098}
+  - component: {fileID: 272058101}
   m_Layer: 5
   m_Name: Game1 (3)
   m_TagString: Games
@@ -154,7 +155,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1302294224}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -225,6 +226,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272058096}
   m_CullTransparentMesh: 1
+--- !u!50 &272058101
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272058096}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +442,7 @@ RectTransform:
   - {fileID: 1539241733}
   - {fileID: 1705877827}
   m_Father: {fileID: 1302294224}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -441,7 +463,7 @@ GameObject:
   - component: {fileID: 988254507}
   - component: {fileID: 988254509}
   m_Layer: 5
-  m_Name: Game1
+  m_Name: DressUp
   m_TagString: Games
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,6 +836,7 @@ GameObject:
   - component: {fileID: 1262635131}
   - component: {fileID: 1262635130}
   - component: {fileID: 1262635129}
+  - component: {fileID: 1262635132}
   m_Layer: 5
   m_Name: Game1 (2)
   m_TagString: Games
@@ -904,6 +927,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262635127}
   m_CullTransparentMesh: 1
+--- !u!50 &1262635132
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262635127}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1302294223
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,8 +980,8 @@ RectTransform:
   - {fileID: 988254504}
   - {fileID: 1018845286}
   - {fileID: 1262635128}
-  - {fileID: 913635406}
   - {fileID: 272058097}
+  - {fileID: 913635406}
   m_Father: {fileID: 2111694100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1001,8 +1045,9 @@ GameObject:
   - component: {fileID: 1539241736}
   - component: {fileID: 1539241735}
   - component: {fileID: 1539241734}
+  - component: {fileID: 1539241737}
   m_Layer: 5
-  m_Name: Game1 copy
+  m_Name: FirstGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,6 +1136,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539241732}
   m_CullTransparentMesh: 1
+--- !u!50 &1539241737
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539241732}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1705877826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,8 +1169,9 @@ GameObject:
   - component: {fileID: 1705877830}
   - component: {fileID: 1705877829}
   - component: {fileID: 1705877828}
+  - component: {fileID: 1705877831}
   m_Layer: 5
-  m_Name: last game
+  m_Name: LastGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,6 +1260,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705877826}
   m_CullTransparentMesh: 1
+--- !u!50 &1705877831
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705877826}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1767548672
 GameObject:
   m_ObjectHideFlags: 0
