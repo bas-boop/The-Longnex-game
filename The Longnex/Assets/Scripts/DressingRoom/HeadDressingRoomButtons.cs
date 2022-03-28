@@ -72,23 +72,15 @@ public class HeadDressingRoomButtons : MonoBehaviour
             if(loadedhead.hats[i])
             {
                 head[i].tag = "lockedItem";
-            }else if (loadedhead.hats[i])
+            }else if (!loadedhead.hats[i])
             {
-                head[i].tag = "lockedItem";
+                head[i].tag = "unlockedItem";
             }
         }
-        /*if (!loadedhead.hat1)
-        {
-            head[1].tag = "unlockedItem";
-        }else if (loadedhead.hats1)
-        {
-            head[1].tag = "lockedItem";
-        }*/
     }
 
-    class LockedItem
+    public class LockedItem
     {
         public bool[] hats;
-        //public bool hat0, hat1, hat2, hat3, hat4,hat5, hat6, hat7, hat8, hat9, hat10, hat11, hat12, hat13, hat14, hat15, hat16;
     }
 }

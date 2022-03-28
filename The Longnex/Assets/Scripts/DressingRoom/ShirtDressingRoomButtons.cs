@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class ShirtDressingRoomButtons : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class ShirtDressingRoomButtons : MonoBehaviour
         
         _lock = GameObject.Find("LockS");
         _lock.SetActive(false);
+        
+        itemTagging();
     }
     
     public void NextItem()//Omhoog knop
@@ -53,7 +56,28 @@ public class ShirtDressingRoomButtons : MonoBehaviour
         
         currentItem = shirts[_index];
         currentItem.SetActive(true);
-        
-        Debug.Log(shirts[_index]);
+    }
+    private void itemTagging()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/Json/LockedItems/lockedItems.json");
+        //Debug.Log(json);
+
+        LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
+        Debug.Log(loadedhead);
+
+        for (int i = 0; i < shirts.Count; i++)
+        {
+            if(loadedhead.shirtz[i])
+            {
+                shirts[i].tag = "lockedItem";
+            }else if (!loadedhead.shirtz[i])
+            {
+                shirts[i].tag = "unlockedItem";
+            }
+        }
+    }
+    public class LockedItem
+    {
+        public bool[] shirtz;
     }
 }
