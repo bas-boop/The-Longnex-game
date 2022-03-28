@@ -24,16 +24,15 @@ public class MinigameSelection : MonoBehaviour
     {
         switch (currentGame)
         {
+            case "Other":
+                Debug.Log("Other");
+                break;
             case "DressUp":
                 Debug.Log("DressUp");
                 if (Input.GetKey(KeyCode.E))
                 {
                     SceneManager.LoadScene("Test");
                 }
-                break;
-
-            case "Other":
-                Debug.Log("Other");
                 break;
         }
     }

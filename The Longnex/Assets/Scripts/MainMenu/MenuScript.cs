@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
 
-    [SerializeField] public GameObject[] panels;
+    [SerializeField] private GameObject[] panels;
     [SerializeField] private float location;
     [Header("moving")]
     [SerializeField] private float leftSpeed;
