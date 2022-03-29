@@ -52,7 +52,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MainMenu\MinigameSelection.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\AccessoriesDressingRoomButtons.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
