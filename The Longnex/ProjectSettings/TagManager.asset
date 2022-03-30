@@ -7,6 +7,7 @@ TagManager:
   - Games
   - unlockedItem
   - lockedItem
+  - Panel
   layers:
   - Default
   - TransparentFX

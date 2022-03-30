@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1faf335c012e3ad4e8f45e5b1446d0bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: fede10080e7871942849bb6bf5ca1644
   - enabled: 1
     path: Assets/Scenes/DressingRoom.unity
     guid: 9942cd85fc3f4394eaa6b56cfdd4bee8
+  - enabled: 1
+    path: Assets/Scenes/SnakeMinigame.unity
+    guid: db6d2c50bff3a0a4d80fd2f7210080fb
   m_configObjects: {}

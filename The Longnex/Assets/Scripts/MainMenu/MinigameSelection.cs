@@ -34,6 +34,12 @@ public class MinigameSelection : MonoBehaviour
                     SceneManager.LoadScene("DressingRoom");
                 }
                 break;
+            case "Snake":
+                if (Input.GetKey(KeyCode.E))
+                {
+                    SceneManager.LoadScene("SnakeMinigame");
+                }
+                break;
         }
     }
 }

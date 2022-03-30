@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\DressingRoom\AccessoriesDressingRoomButtons.cs" />
     <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />
     <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
+    <Compile Include="Assets\Scripts\Snake\Snakepanels.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
