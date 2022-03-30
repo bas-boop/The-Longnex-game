@@ -31,7 +31,7 @@ public class MinigameSelection : MonoBehaviour
                 Debug.Log("DressUp");
                 if (Input.GetKey(KeyCode.E))
                 {
-                    SceneManager.LoadScene("Test");
+                    SceneManager.LoadScene("DressingRoom");
                 }
                 break;
         }

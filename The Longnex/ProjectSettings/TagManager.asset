@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Games
+  - unlockedItem
+  - lockedItem
   layers:
   - Default
   - TransparentFX

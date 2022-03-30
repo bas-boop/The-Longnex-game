@@ -1,0 +1,11 @@
+{
+    "hats": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
+    "accessoriez": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
+    "shirtz": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
+    "hatsv2": [
+        {
+            "nsmr": "",
+            "wearable": false
+        }
+    ]
+}
