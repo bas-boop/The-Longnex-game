@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels: []
+  longnex: {fileID: 0}
   location: 0
   leftSpeed: 200
   rightSpeed: 200
