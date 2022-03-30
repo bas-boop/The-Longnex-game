@@ -8,7 +8,7 @@ public class AccessoriesDressingRoomButtons : MonoBehaviour
 {
     [SerializeField]private List<GameObject> accessories = new List<GameObject>();
 
-    private int _index = 0;
+    public int index = 0;
     [SerializeField] private GameObject currentItem;
     
     private GameObject _lock;
@@ -16,7 +16,7 @@ public class AccessoriesDressingRoomButtons : MonoBehaviour
     private void Start()
     {
         currentItem = accessories[0];
-        currentItem = accessories[_index];
+        currentItem = accessories[index];
         
         _lock = GameObject.Find("LockA");
         _lock.SetActive(false);
@@ -27,11 +27,11 @@ public class AccessoriesDressingRoomButtons : MonoBehaviour
     public void NextItem()//Omhoog knop
     {
         currentItem.SetActive(false);
-        _index = _index + 1;
-        if (_index == accessories.Count)
-            _index = _index = 0;
+        index = index + 1;
+        if (index == accessories.Count)
+            index = index = 0;
 
-        if (accessories[_index].CompareTag("lockedItem"))
+        if (accessories[index].CompareTag("lockedItem"))
         {
             _lock.SetActive(true);
             //currentItem.GetComponent<Color>() = new Color(0, 0, 0, 150); //wou de item zelf ook transpierant maken
@@ -40,25 +40,23 @@ public class AccessoriesDressingRoomButtons : MonoBehaviour
             _lock.SetActive(false);   
         }
 
-        currentItem = accessories[_index];
+        currentItem = accessories[index];
         currentItem.SetActive(true);
-        
-        Debug.Log(accessories[_index]);
     }
     public void PreviousItem()//Omlaag knop
     {
         currentItem.SetActive(false);
-        _index = _index - 1;
-        if (_index < 0)
-            _index = accessories.Count - 1;
+        index = index - 1;
+        if (index < 0)
+            index = accessories.Count - 1;
         
-        if (accessories[_index].CompareTag("lockedItem"))
+        if (accessories[index].CompareTag("lockedItem"))
         {
             _lock.SetActive(true);
         }else
             _lock.SetActive(false);
         
-        currentItem = accessories[_index];
+        currentItem = accessories[index];
         currentItem.SetActive(true);
     }
     private void itemTagging()
@@ -67,7 +65,6 @@ public class AccessoriesDressingRoomButtons : MonoBehaviour
         //Debug.Log(json);
 
         LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
-        Debug.Log(loadedhead);
 
         for (int i = 0; i < accessories.Count; i++)
         {

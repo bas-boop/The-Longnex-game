@@ -7,7 +7,7 @@ public class ShirtDressingRoomButtons : MonoBehaviour
 {
     [SerializeField]private List<GameObject> shirts = new List<GameObject>();
 
-    private int _index = 0;
+    public int index = 0;
     [SerializeField] private GameObject currentItem;
     
     private GameObject _lock;
@@ -15,7 +15,7 @@ public class ShirtDressingRoomButtons : MonoBehaviour
     private void Start()
     {
         currentItem = shirts[0];
-        currentItem = shirts[_index];
+        currentItem = shirts[index];
         
         _lock = GameObject.Find("LockS");
         _lock.SetActive(false);
@@ -26,35 +26,33 @@ public class ShirtDressingRoomButtons : MonoBehaviour
     public void NextItem()//Omhoog knop
     {
         currentItem.SetActive(false);
-        _index += 1;
-        if (_index == shirts.Count)
-            _index = _index = 0;
+        index += 1;
+        if (index == shirts.Count)
+            index = index = 0;
 
-        if (shirts[_index].CompareTag("lockedItem"))
+        if (shirts[index].CompareTag("lockedItem"))
         {
             _lock.SetActive(true);
         }else
             _lock.SetActive(false);
         
-        currentItem = shirts[_index];
+        currentItem = shirts[index];
         currentItem.SetActive(true);
-        
-        Debug.Log(shirts[_index]);
     }
     public void PreviousItem()//Omlaag knop
     {
         currentItem.SetActive(false);
-        _index = _index - 1;
-        if (_index < 0)
-            _index = shirts.Count - 1;
+        index = index - 1;
+        if (index < 0)
+            index = shirts.Count - 1;
         
-        if (shirts[_index].CompareTag("lockedItem"))
+        if (shirts[index].CompareTag("lockedItem"))
         {
             _lock.SetActive(true);
         }else
             _lock.SetActive(false);
         
-        currentItem = shirts[_index];
+        currentItem = shirts[index];
         currentItem.SetActive(true);
     }
     private void itemTagging()
@@ -63,7 +61,6 @@ public class ShirtDressingRoomButtons : MonoBehaviour
         //Debug.Log(json);
 
         LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
-        Debug.Log(loadedhead);
 
         for (int i = 0; i < shirts.Count; i++)
         {
