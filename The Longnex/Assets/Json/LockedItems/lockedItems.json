@@ -1,5 +1,6 @@
 {
-    "hats": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
+    "hatz": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
+    "hairz": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
     "accessoriez": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
     "shirtz": [ false, true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false ],
     "hatsv2": [

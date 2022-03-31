@@ -6,9 +6,9 @@ using System.IO;
 
 public class ApplyClothes : MonoBehaviour
 {
-    private HeadDressingRoomButtons Head;
+    /*private HeadDressingRoomButtons Head;
     private ShirtDressingRoomButtons Shirt;
-    private AccessoriesDressingRoomButtons Accessories;
+    private AccessoriesDressingRoomButtons Accessories;*/
     
     public int currentHead;
     public int currentShirt;
@@ -16,16 +16,16 @@ public class ApplyClothes : MonoBehaviour
     
     private void Start()
     {
-        Head = GetComponent<HeadDressingRoomButtons>();
+        /*Head = GetComponent<HeadDressingRoomButtons>();
         Shirt = GetComponent<ShirtDressingRoomButtons>();
-        Accessories = GetComponent<AccessoriesDressingRoomButtons>();
+        Accessories = GetComponent<AccessoriesDressingRoomButtons>();*/
     }
 
     private void Update()
     {
-        currentHead = Head.index;
+        /*currentHead = Head.index;
         currentAccessorie = Accessories.index;
-        currentShirt = Shirt.index;
+        currentShirt = Shirt.index;*/
     }
 
     public void SaveClothes()

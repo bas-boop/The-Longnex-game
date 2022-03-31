@@ -56,9 +56,10 @@
      <Compile Include="Assets\Scripts\ApplyClothes.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\BackButton.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\AccessoriesDressingRoomButtons.cs" />
-     <Compile Include="Assets\Scripts\DressingRoom\BackButton.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\DressingRoom.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

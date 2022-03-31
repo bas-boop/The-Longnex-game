@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 public class HeadDressingRoomButtons : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> head/* = new List<GameObject>()*/;
+    [SerializeField] private List<GameObject> head = new List<GameObject>();
     public int index = 0;
     [SerializeField]private GameObject currentItem;
 
@@ -64,7 +64,7 @@ public class HeadDressingRoomButtons : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/Json/LockedItems/lockedItems.json");
         //Debug.Log(json);
 
-        LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
+        /*LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
 
         for (int i = 0; i < head.Count; i++)
         {
@@ -75,11 +75,11 @@ public class HeadDressingRoomButtons : MonoBehaviour
             {
                 head[i].tag = "unlockedItem";
             }
-        }
+        }*/
     }
 
-    public class LockedItem
+    /*public class LockedItem
     {
         public bool[] hats;
-    }
+    }*/
 }

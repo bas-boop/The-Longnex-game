@@ -60,7 +60,7 @@ public class ShirtDressingRoomButtons : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/Json/LockedItems/lockedItems.json");
         //Debug.Log(json);
 
-        LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
+        /*LockedItem loadedhead = JsonUtility.FromJson<LockedItem>(json);
 
         for (int i = 0; i < shirts.Count; i++)
         {
@@ -71,10 +71,10 @@ public class ShirtDressingRoomButtons : MonoBehaviour
             {
                 shirts[i].tag = "unlockedItem";
             }
-        }
+        }*/
     }
-    public class LockedItem
+    /*public class LockedItem
     {
         public bool[] shirtz;
-    }
+    }*/
 }
