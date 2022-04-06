@@ -10,7 +10,6 @@ public class DressingRoom : MonoBehaviour
     [SerializeField] private List<GameObject> hairs;
     [SerializeField] private List<GameObject> accessories;
     [SerializeField] private List<GameObject> shirts;
-
     
     [Header("Index's")]
     public int hairIndex = 0;

@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\DressingRoom\DressingRoom.cs" />
      <Compile Include="Assets\Scripts\ApplyClothes.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\GetClothes.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\BackButton.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />

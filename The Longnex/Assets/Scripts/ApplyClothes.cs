@@ -6,26 +6,24 @@ using System.IO;
 
 public class ApplyClothes : MonoBehaviour
 {
-    /*private HeadDressingRoomButtons Head;
-    private ShirtDressingRoomButtons Shirt;
-    private AccessoriesDressingRoomButtons Accessories;*/
+    private DressingRoom _DR;
     
     public int currentHead;
+    public int currentHair;
     public int currentShirt;
     public  int currentAccessorie;
     
     private void Start()
     {
-        /*Head = GetComponent<HeadDressingRoomButtons>();
-        Shirt = GetComponent<ShirtDressingRoomButtons>();
-        Accessories = GetComponent<AccessoriesDressingRoomButtons>();*/
+        _DR = GetComponent<DressingRoom>();
     }
 
     private void Update()
     {
-        /*currentHead = Head.index;
-        currentAccessorie = Accessories.index;
-        currentShirt = Shirt.index;*/
+        currentHead = _DR.hatIndex;
+        currentHair = _DR.hairIndex;
+        currentAccessorie = _DR.AIndex;
+        currentShirt = _DR.SIndex;
     }
 
     public void SaveClothes()
@@ -34,12 +32,9 @@ public class ApplyClothes : MonoBehaviour
         Clothes loadedClothes = JsonUtility.FromJson<Clothes>(json);
 
         loadedClothes.hat = currentHead;
+        loadedClothes.hair = currentHair;
         loadedClothes.shirt = currentShirt;
         loadedClothes.accessorie = currentAccessorie;
-
-        /*Debug.Log(loadedClothes.hat);
-        Debug.Log(loadedClothes.accessorie);
-        Debug.Log(loadedClothes.shirt);*/
 
         string savedClothes = JsonUtility.ToJson(loadedClothes);
         File.WriteAllText(Application.dataPath + "/Json/ApplyClothes.json", savedClothes);
@@ -50,6 +45,7 @@ public class ApplyClothes : MonoBehaviour
     class Clothes
     {
         public int hat;
+        public int hair;
         public int accessorie;
         public int shirt;
     }
