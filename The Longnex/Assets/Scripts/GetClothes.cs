@@ -39,7 +39,7 @@ public class GetClothes : MonoBehaviour
         currentHair = hairs[hairIndex];
         currentAccessorie = accessories[AIndex];
         currentShirt = shirts[SIndex];
-        
+
         currentHat.SetActive(true);
         currentHair.SetActive(true);
         currentAccessorie.SetActive(true);

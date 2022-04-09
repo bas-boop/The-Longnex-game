@@ -11,23 +11,29 @@ public class ApplyClothes : MonoBehaviour
     public int currentHead;
     public int currentHair;
     public int currentShirt;
-    public  int currentAccessorie;
-    
+    public int currentAccessorie;
+
     private void Start()
     {
         _DR = GetComponent<DressingRoom>();
     }
 
-    private void Update()
+    public void SaveClothes()
     {
         currentHead = _DR.hatIndex;
         currentHair = _DR.hairIndex;
         currentAccessorie = _DR.AIndex;
         currentShirt = _DR.SIndex;
-    }
-
-    public void SaveClothes()
-    {
+        
+        if (_DR.headLokced)
+            currentHead = 0;
+        if (_DR.hairLocked)
+            currentHair = 0;
+        if (_DR.ALokced)
+            currentAccessorie = 0;
+        if (_DR.SLocked)
+            currentShirt = 0;
+        
         string json = File.ReadAllText(Application.dataPath + "/Json/ApplyClothes.json");
         Clothes loadedClothes = JsonUtility.FromJson<Clothes>(json);
 

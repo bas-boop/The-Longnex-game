@@ -23,6 +23,12 @@ public class DressingRoom : MonoBehaviour
     [SerializeField] private GameObject currentAccessorie;
     [SerializeField] private GameObject currentShirt;
 
+    [Header("LOCK BOOL")]
+    public bool headLokced;
+    public bool hairLocked;
+    public bool ALokced;
+    public bool SLocked;
+
     [Header("LOCK'S")] 
     private GameObject _hatLock;
     private GameObject _hairLock;
@@ -50,7 +56,7 @@ public class DressingRoom : MonoBehaviour
         _SLock = GameObject.Find("LockS");
         _SLock.SetActive(false);
         
-        itemTagging();
+        ItemTagging();
     }
 
     public void NextHat()
@@ -68,6 +74,12 @@ public class DressingRoom : MonoBehaviour
         
         currentHat = hats[hatIndex];
         currentHat.SetActive(true);
+
+        if (currentHat.CompareTag("lockedItem"))
+        {
+            headLokced = true;
+        }else
+            headLokced = false;
     }
 
     public void NextHair()
@@ -85,6 +97,13 @@ public class DressingRoom : MonoBehaviour
         
         currentHair = hairs[hairIndex];
         currentHair.SetActive(true);
+
+        if (currentHair.CompareTag("lockedItem"))
+        {
+            hairLocked = true;
+        }
+        else
+            hairLocked = false;
     }
 
     public void NextAccessorie()
@@ -102,6 +121,12 @@ public class DressingRoom : MonoBehaviour
         
         currentAccessorie = accessories[AIndex];
         currentAccessorie.SetActive(true);
+        
+        if (currentAccessorie.CompareTag("lockedItem"))
+        {
+            ALokced = true;
+        }else
+            ALokced = false;
     }
 
     public void NextShirt()
@@ -119,6 +144,12 @@ public class DressingRoom : MonoBehaviour
         
         currentShirt = shirts[SIndex];
         currentShirt.SetActive(true);
+        
+        if (currentShirt.CompareTag("lockedItem"))
+        {
+            SLocked = true;
+        }else
+            SLocked = false;
     }
 
     public void PreviousHat()
@@ -137,6 +168,12 @@ public class DressingRoom : MonoBehaviour
 
         currentHat = hats[hatIndex];
         currentHat.SetActive(true);
+        
+        if (currentHat.CompareTag("lockedItem"))
+        {
+            headLokced = true;
+        }else
+            headLokced = false;
     }
 
     public void PreviousHair()
@@ -155,6 +192,12 @@ public class DressingRoom : MonoBehaviour
 
         currentHair = hairs[hairIndex];
         currentHair.SetActive(true);
+        
+        if (currentHair.CompareTag("lockedItem"))
+        {
+            hairLocked = true;
+        }else
+            hairLocked = false;
     }
 
     public void PreviousAccessorie()
@@ -173,6 +216,12 @@ public class DressingRoom : MonoBehaviour
 
         currentAccessorie = accessories[AIndex];
         currentAccessorie.SetActive(true);
+        
+        if (currentAccessorie.CompareTag("lockedItem"))
+        {
+            ALokced = true;
+        }else
+            ALokced = false;
     }
 
     public void PreviousShirt()
@@ -191,9 +240,15 @@ public class DressingRoom : MonoBehaviour
 
         currentShirt = shirts[SIndex];
         currentShirt.SetActive(true);
+        
+        if (currentShirt.CompareTag("lockedItem"))
+        {
+            SLocked = true;
+        }else
+            SLocked = false;
     }
     
-    private void itemTagging()
+    private void ItemTagging()
     {
         string json = File.ReadAllText(Application.dataPath + "/Json/LockedItems/lockedItems.json");
         //Debug.Log(json);
@@ -241,7 +296,7 @@ public class DressingRoom : MonoBehaviour
             }
         }
     }
-        
+
     public class LockedItem
     {
         public bool[] hatz;
