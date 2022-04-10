@@ -6,6 +6,11 @@ using System.IO;
 
 public class ApplyClothes : MonoBehaviour
 {
+    /// <summary>
+    /// als je de gekozen items saved dan schrijft ie dat in de json file ApplyClothes.json
+    /// als je een item locked is wordt het 0, wat gelijk staat aan niks (geen kleding)
+    /// </summary>
+    
     private DressingRoom _DR;
     
     public int currentHead;

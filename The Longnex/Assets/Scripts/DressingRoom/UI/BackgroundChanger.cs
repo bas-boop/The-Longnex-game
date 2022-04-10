@@ -7,11 +7,27 @@ using UnityEngine.UIElements;
 
 public class BackgroundChanger : MonoBehaviour
 {
-    [SerializeField] private GameObject camera;
-    private GameObject _startColor;
+    /// <summary>
+    /// Hier kan je de kleur veranderen van de background
+    /// en misschien de image ook
+    /// </summary>
+    
+    [SerializeField] private GameObject background;
+    
+    [Header("COLOR'S")]
+    [SerializeField] private Color currentColor;
+    [SerializeField] private Color startColor;
 
+    [Header("IMAGE'S")]
+    [SerializeField] private Sprite startImage;
+    [SerializeField] private Sprite currentImage;
+    
     private void Start()
     {
-        //_startColor = camera.GetComponent<Background>();
+        startColor = background.GetComponent<SpriteRenderer>().color;
+        currentColor = startColor;
+
+        startImage = background.GetComponent<SpriteRenderer>().sprite;
+        currentImage = startImage;
     }
 }

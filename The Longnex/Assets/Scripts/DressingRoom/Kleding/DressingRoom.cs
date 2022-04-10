@@ -5,6 +5,11 @@ using System.IO;
 
 public class DressingRoom : MonoBehaviour
 {
+    /// <summary>
+    /// hier kan je de kleding stukken veranderen via de knoppen
+    /// ook wordt er item tagging gedaan voor de locked item's, via de json file lockedItems.json
+    /// </summary>
+    
     [Header("LISTS")]
     [SerializeField] private List<GameObject> hats;
     [SerializeField] private List<GameObject> hairs;
@@ -23,7 +28,7 @@ public class DressingRoom : MonoBehaviour
     [SerializeField] private GameObject currentAccessorie;
     [SerializeField] private GameObject currentShirt;
 
-    [Header("LOCK BOOL")]
+    [Header("LOCK BOOL'S")]
     public bool headLokced;
     public bool hairLocked;
     public bool ALokced;

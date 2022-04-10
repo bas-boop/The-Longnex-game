@@ -6,6 +6,12 @@ using System.IO;
 
 public class GetClothes : MonoBehaviour
 {
+    /// <summary>
+    /// Dit is de script die overal gezet kan worden, voor de gekozen kleding
+    /// het leest het uit de ApplyClohtes.json en past het toe
+    /// je heb wel de clothes prefab nodig hier voor
+    /// </summary>
+    
     [Header("LISTS")]
     [SerializeField] private List<GameObject> hats;
     [SerializeField] private List<GameObject> hairs;
