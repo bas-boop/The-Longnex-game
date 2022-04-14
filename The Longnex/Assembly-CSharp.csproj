@@ -52,6 +52,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Pong\Blokje.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MinigameSelection.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\Kleding\DressingRoom.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\UI\ApplyClothes.cs" />
