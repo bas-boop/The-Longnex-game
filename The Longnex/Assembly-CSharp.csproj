@@ -52,13 +52,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Pong\Blokje.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MinigameSelection.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
      <Compile Include="Assets\Scripts\Pong\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\AccessoriesDressingRoomButtons.cs" />
-     <Compile Include="Assets\Scripts\Pong\Blokje.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
