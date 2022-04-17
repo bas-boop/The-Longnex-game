@@ -8,6 +8,7 @@ TagManager:
   - unlockedItem
   - lockedItem
   - Panel
+  - Snake
   layers:
   - Default
   - TransparentFX
