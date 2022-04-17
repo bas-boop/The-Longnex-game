@@ -377,6 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.1
+  maxSpeed: {x: 5, y: 5}
+  currentSpeed: {x: 0, y: 0}
 --- !u!1 &441693997
 GameObject:
   m_ObjectHideFlags: 0

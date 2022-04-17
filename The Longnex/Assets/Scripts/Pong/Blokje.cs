@@ -10,6 +10,9 @@ public class Blokje : MonoBehaviour
     private Rigidbody2D _rb2d;
     [SerializeField] private float speed;
 
+    [SerializeField] private Vector2 maxSpeed;
+    [SerializeField] private Vector2 currentSpeed;
+
     private void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -18,6 +21,16 @@ public class Blokje : MonoBehaviour
     private void Start()
     {
         StartingForece();
+    }
+
+    private void Update()
+    {
+        currentSpeed = _rb2d.velocity;
+
+        if (currentSpeed == maxSpeed)
+        {
+            currentSpeed = new Vector2(1.1f ,1.1f);
+        }
     }
 
     private void StartingForece()
