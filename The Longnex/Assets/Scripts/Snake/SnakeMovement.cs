@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class SnakeMovement : MonoBehaviour
 {
     [SerializeField] private GameObject[] snake;
@@ -9,7 +10,7 @@ public class SnakeMovement : MonoBehaviour
     private GameObject body;
     private GameObject bodyParent;
     private GameObject tail;
-    [SerializeField] private float waitingTime;
+    public float waitingTime;
     [SerializeField] private Vector3 directionLeft;
     [SerializeField] private Vector3 directionRight;
     [SerializeField] private float distanceThreshold;
@@ -17,6 +18,10 @@ public class SnakeMovement : MonoBehaviour
     private bool rotateLeft = false;
     private bool rotateRight = false;
     public bool spawnBody = false;
+    [SerializeField] private Sprite normal;
+    [SerializeField] private Sprite tails;
+    [SerializeField] private Sprite left;
+    [SerializeField] private Sprite right;
     private void Start()
     {
         sides = GameObject.FindGameObjectsWithTag("Side");
@@ -114,7 +119,20 @@ public class SnakeMovement : MonoBehaviour
             for (int i = 0; i < snake.Length; i++)
             {
                 snake[i].transform.Rotate(directionLeft);
-                yield return new WaitForSeconds(waitingTime);
+                
+                if (i >= 1) 
+                {
+                    for (int i2 = 1; i2 < snake.Length; i2++)
+                    {
+                        snake[i].GetComponent<Image>().sprite = left;
+                        tail.GetComponent<Image>().sprite = tails;
+
+                    }
+                    yield return new WaitForSeconds(waitingTime);
+                    snake[i].GetComponent<Image>().sprite = normal;
+                    tail.GetComponent<Image>().sprite = tails;
+                }
+
             }
             rotate = false;
             rotateLeft = false;
@@ -124,7 +142,17 @@ public class SnakeMovement : MonoBehaviour
             for (int i = 0; i < snake.Length; i++)
             {
                 snake[i].transform.Rotate(directionRight);
-                yield return new WaitForSeconds(waitingTime);
+                if (i >= 1)
+                {
+                    for (int i2 = 1; i2 < snake.Length; i2++)
+                    {
+                        snake[i].GetComponent<Image>().sprite = right;
+                        tail.GetComponent<Image>().sprite = tails;
+                    }
+                    yield return new WaitForSeconds(waitingTime);
+                    snake[i].GetComponent<Image>().sprite = normal;
+                    tail.GetComponent<Image>().sprite = tails;
+                }
             }
             rotateRight = false;
         }

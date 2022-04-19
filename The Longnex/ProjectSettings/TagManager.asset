@@ -9,6 +9,7 @@ TagManager:
   - lockedItem
   - Panel
   - Snake
+  - Side
   layers:
   - Default
   - TransparentFX
