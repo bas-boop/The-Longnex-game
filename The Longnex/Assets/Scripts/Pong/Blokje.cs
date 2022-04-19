@@ -7,6 +7,11 @@ using Random = System.Random;
 
 public class Blokje : MonoBehaviour
 {
+    /// <summary>
+    /// Dit is voor de ball (blokje)
+    /// Hierin wordt de ball random start ding gedaan
+    /// </summary>
+    
     private Rigidbody2D _rb2d;
     [SerializeField] private float speed;
 

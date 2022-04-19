@@ -7,6 +7,11 @@ using UnityEngine.UIElements;
 
 public class ScoringZone : MonoBehaviour
 {
+    /// <summary>
+    /// Dit moet op een collider van de muur
+    /// Hier in kan je een functie aan roepen van een andere script
+    /// </summary>
+    
     public EventTrigger.TriggerEvent scoreTrigger;
 
     private void OnCollisionEnter2D(Collision2D collision)
