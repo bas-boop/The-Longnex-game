@@ -20,7 +20,7 @@ public class Blokje : MonoBehaviour
 
     private void Start()
     {
-        StartingForece();
+        RespawnBlokje();
     }
 
     private void Update()
@@ -33,6 +33,14 @@ public class Blokje : MonoBehaviour
         }
     }
 
+    public void RespawnBlokje()
+    {
+        _rb2d.position = Vector2.zero;
+        _rb2d.velocity = Vector2.zero;
+        
+        StartingForece();
+    }
+    
     private void StartingForece()
     {
         float x = 1f;
