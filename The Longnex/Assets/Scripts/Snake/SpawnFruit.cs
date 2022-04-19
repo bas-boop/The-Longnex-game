@@ -4,17 +4,17 @@ using UnityEngine;
 public class SpawnFruit : MonoBehaviour
 {
     private GameObject[] blankTiles;
-    private GameObject blankObject;
-    private GameObject[] Snake;
+    private GameObject[] snake;
     private GameObject[] tiles;
-    private int e;
     [SerializeField] private float distanceThreshold;
+    private SnakeMovement spawn;
     private GameObject fruit;
     private void Start()
     {
         fruit = GameObject.Find("Fruit");
         tiles = GameObject.FindGameObjectsWithTag("Panel");
-        Snake = GameObject.FindGameObjectsWithTag("Snake");
+        snake = GameObject.FindGameObjectsWithTag("Snake");
+        spawn = FindObjectOfType<SnakeMovement>();
         IsWithinRange();
     }
     private bool IsWithinRange()
@@ -22,20 +22,24 @@ public class SpawnFruit : MonoBehaviour
         for (int i = 0; i < tiles.Length; i++)
         {
             tiles[i].SetActive(true);
-            for (int i2 = 0; i2 < Snake.Length; i2++)
+            for (int i2 = 0; i2 < snake.Length; i2++)
             {
-                if (Vector3.Distance(Snake[i2].transform.position, tiles[i].transform.position) <= distanceThreshold)
+                if (Vector3.Distance(snake[i2].transform.position, tiles[i].transform.position) <= distanceThreshold)
                 {
+                    snake = GameObject.FindGameObjectsWithTag("Snake");
                     tiles[i].SetActive(false);
                 }
-                if (i2 == Snake.Length - 1 && i == tiles.Length - 1)
+                if (i2 == snake.Length - 1 && i == tiles.Length - 1)
                 {
+                    spawn.spawnBody = true;
                     PlaceFruit();
                 }
             }
         }
         return true;
     }
+
+
 
     private void PlaceFruit()
     {
@@ -49,9 +53,9 @@ public class SpawnFruit : MonoBehaviour
 
     private void Update()
     {
-        for (int i2 = 0; i2 < Snake.Length; i2++)
+        for (int i2 = 0; i2 < snake.Length; i2++)
         {
-            if (Vector3.Distance(Snake[i2].transform.position, fruit.transform.position) <= distanceThreshold)
+            if (Vector3.Distance(snake[i2].transform.position, fruit.transform.position) <= distanceThreshold)
             {
                 IsWithinRange();
             }
