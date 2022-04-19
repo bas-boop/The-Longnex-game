@@ -21,20 +21,34 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        /*if (Input.GetKey(KeyCode.UpArrow))
         {
             player1.transform.position += Vector3.up * playerSpeed;
         }else if (Input.GetKey(KeyCode.DownArrow))
         {
             player1.transform.position -= Vector3.up * playerSpeed;
+        }*/
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            player1.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerSpeed);
+        }else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            player1.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * playerSpeed);
         }
         
-        if (Input.GetKey(KeyCode.W))
+        /*if (Input.GetKey(KeyCode.W))
         {
             player2.transform.position += Vector3.up * playerSpeed;
         }else if (Input.GetKey(KeyCode.S))
         {
             player2.transform.position -= Vector3.up * playerSpeed;
+        }*/
+        if (Input.GetKey(KeyCode.W))
+        {
+            player2.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerSpeed);
+        }else if (Input.GetKey(KeyCode.S))
+        {
+            player2.GetComponent<Rigidbody2D>().AddForce(-Vector2.up * playerSpeed);
         }
     }
 }

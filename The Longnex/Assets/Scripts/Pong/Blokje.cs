@@ -17,6 +17,11 @@ public class Blokje : MonoBehaviour
 
     [SerializeField] private Vector2 maxSpeed;
     [SerializeField] private Vector2 currentSpeed;
+    
+    [SerializeField] private GameObject player1;
+    [SerializeField] private GameObject player2;
+    private Rigidbody2D _rdp1;
+    private Rigidbody2D _rdp2;
 
     private void Awake()
     {
@@ -25,7 +30,8 @@ public class Blokje : MonoBehaviour
 
     private void Start()
     {
-        RespawnBlokje();
+        _rdp1 = player1.GetComponent<Rigidbody2D>();
+        _rdp2 = player2.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -43,6 +49,11 @@ public class Blokje : MonoBehaviour
         _rb2d.position = Vector2.zero;
         _rb2d.velocity = Vector2.zero;
         
+        _rdp1.position = new Vector2(8,0);
+        _rdp1.velocity = Vector2.zero;
+        _rdp2.position = new Vector2(-8,0);
+        _rdp2.velocity = Vector2.zero;
+
         StartingForece();
     }
     
