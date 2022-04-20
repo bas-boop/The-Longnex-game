@@ -54,12 +54,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Pong\Blokje.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MinigameSelection.cs" />
-     <Compile Include="Assets\Scripts\Pong\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
-     <Compile Include="Assets\Scripts\Pong\ScoreManger.cs" />
-     <Compile Include="Assets\Scripts\Pong\ScoringZone.cs" />
-     <Compile Include="Assets\Scripts\Pong\StartGame.cs" />
-     <Compile Include="Assets\Scripts\EndMiniGame.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\Kleding\DressingRoom.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\UI\ApplyClothes.cs" />
      <Compile Include="Assets\Scripts\DressingRoom\Kleding\ShirtDressingRoomButtons.cs" />
