@@ -47,7 +47,7 @@ public class SnakeMovement : MonoBehaviour
             rotate = true;
             rotateLeft = true;
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)){
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
             directionRight.z = -90;
             rotate = true;
             rotateRight = true;
@@ -57,18 +57,18 @@ public class SnakeMovement : MonoBehaviour
     private void Spawn()
     {
         tail.SetActive(false);
-        GameObject clone =  Instantiate(body, tail.transform.position, tail.transform.rotation);
+        GameObject clone = Instantiate(body, tail.transform.position, tail.transform.rotation);
         tail.SetActive(true);
         clone.transform.SetParent(bodyParent.transform, false);
         clone.transform.SetPositionAndRotation(tail.transform.position, tail.transform.rotation);
-        clone.transform.localScale = new Vector2(1.5f,1.5f);
+        clone.transform.localScale = new Vector2(1.5f, 1.5f);
         snake = GameObject.FindGameObjectsWithTag("Snake");
         spawnBody = false;
     }
 
     private IEnumerator Movement()
     {
-        
+
         yield return new WaitForSeconds(waitingTime);
         RotateSnake();
         if (spawnBody) Spawn();
@@ -78,9 +78,9 @@ public class SnakeMovement : MonoBehaviour
             rotate = false;
         }
         tail.transform.position = snake[snake.Length - 2].transform.position;
-        for (int i =1; i < snake.Length -1; i++)
+        for (int i = 1; i < snake.Length - 1; i++)
         {
-            snake[snake.Length-i].transform.position = snake[snake.Length -( i +1)].transform.position;          
+            snake[snake.Length - i].transform.position = snake[snake.Length - (i + 1)].transform.position;
         }
         body.transform.position = head.transform.position;
         head.transform.Translate(160, 0, 0);
@@ -112,20 +112,40 @@ public class SnakeMovement : MonoBehaviour
             }
         }
     }
+    //private IEnumerator RotateCorrect()
+    //{
+    //    body.transform.rotation = head.transform.rotation;
+    //    yield return new WaitForSeconds(waitingTime);
+    //    for (int i = 1; i < snake.Length - 1; i++)
+    //    {
+    //        snake[snake.Length - i].transform.rotation = snake[snake.Length - (i + 1)].transform.rotation;
+    //        yield return new WaitForSeconds(waitingTime);
+    //    }
 
+    //    tail.transform.rotation = snake[snake.Length - 2].transform.rotation;
+
+
+    //}
     private IEnumerator Rotate()
     {
         if (rotateLeft) {
             for (int i = 0; i < snake.Length; i++)
             {
                 snake[i].transform.Rotate(directionLeft);
-                
+                //StartCoroutine(RotateCorrect());
                 if (i >= 1) 
                 {
                     for (int i2 = 1; i2 < snake.Length; i2++)
                     {
-                        snake[i].GetComponent<Image>().sprite = left;
                         tail.GetComponent<Image>().sprite = tails;
+                        if (snake[snake.Length -1] == tail == false)
+                        {
+                            for (int i3 = 0; i3 < snake.Length; i3++)
+                            {
+                                snake[i].transform.Rotate(directionLeft);
+                                tail.GetComponent<Image>().sprite = tails;
+                            }
+                        }
 
                     }
                     yield return new WaitForSeconds(waitingTime);
@@ -139,6 +159,7 @@ public class SnakeMovement : MonoBehaviour
         }
         else if (rotateRight)
         {
+            //StartCoroutine(RotateCorrect());
             for (int i = 0; i < snake.Length; i++)
             {
                 snake[i].transform.Rotate(directionRight);
@@ -146,7 +167,6 @@ public class SnakeMovement : MonoBehaviour
                 {
                     for (int i2 = 1; i2 < snake.Length; i2++)
                     {
-                        snake[i].GetComponent<Image>().sprite = right;
                         tail.GetComponent<Image>().sprite = tails;
                     }
                     yield return new WaitForSeconds(waitingTime);

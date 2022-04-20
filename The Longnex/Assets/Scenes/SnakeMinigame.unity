@@ -3213,7 +3213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f966cf2f826b2f468c4d9c29450746a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 20
+  distanceThreshold: 25
   fruit1: {fileID: 21300000, guid: 09b2a08e0d7b4ac49a159a8e317b11de, type: 3}
   fruit2: {fileID: 21300000, guid: 00e4af335aeca4941948b49f3da668b2, type: 3}
   fruit3: {fileID: 21300000, guid: e9416ca516a2e1b40bcd6d2739725438, type: 3}
