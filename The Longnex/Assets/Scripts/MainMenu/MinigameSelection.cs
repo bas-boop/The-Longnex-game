@@ -40,6 +40,12 @@ public class MinigameSelection : MonoBehaviour
                     SceneManager.LoadScene("SnakeMinigame");
                 }
                 break;
+            case "Pong":
+                if (Input.GetKey(KeyCode.E))
+                {
+                    SceneManager.LoadScene("Pong");
+                }
+                break;
         }
     }
 }
