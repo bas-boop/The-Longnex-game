@@ -10,7 +10,9 @@ public class SnakeMovement : MonoBehaviour
     private GameObject body;
     private GameObject bodyParent;
     private GameObject tail;
+    private GameObject endScreen;
     public float waitingTime;
+    [SerializeField] private int speed = 160; 
     [SerializeField] private Vector3 directionLeft;
     [SerializeField] private Vector3 directionRight;
     [SerializeField] private float distanceThreshold;
@@ -24,6 +26,8 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private Sprite right;
     private void Start()
     {
+        endScreen = GameObject.Find("EndScreen 1");
+        endScreen.SetActive(false);
         sides = GameObject.FindGameObjectsWithTag("Side");
         snake = GameObject.FindGameObjectsWithTag("Snake");
         head = GameObject.Find("Head");
@@ -83,7 +87,7 @@ public class SnakeMovement : MonoBehaviour
             snake[snake.Length - i].transform.position = snake[snake.Length - (i + 1)].transform.position;
         }
         body.transform.position = head.transform.position;
-        head.transform.Translate(160, 0, 0);
+        head.transform.Translate(speed, 0, 0);
         StartCoroutine(Movement());
         yield return new WaitForSeconds(0.0001f);
         CollisionWithSelf();
@@ -95,7 +99,8 @@ public class SnakeMovement : MonoBehaviour
         {
             if (Vector3.Distance(head.transform.position, snake[i].transform.position) <= distanceThreshold)
             {
-                Debug.Log("collision");
+                speed = 0;
+                endScreen.SetActive(true);
             }
         }
     }
@@ -107,7 +112,8 @@ public class SnakeMovement : MonoBehaviour
             {
                 if (Vector3.Distance(snake[i2].transform.position, sides[i].transform.position) <= distanceThreshold)
                 {
-                    Debug.Log("dead");
+                    speed = 0;
+                    endScreen.SetActive(true);
                 }
             }
         }
