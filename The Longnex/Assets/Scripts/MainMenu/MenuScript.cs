@@ -7,6 +7,7 @@ public class MenuScript : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] panels;
+    [SerializeField] private GameObject longnex;
     [SerializeField] private float location;
     [Header("moving")]
     [SerializeField] private float leftSpeed;
@@ -25,6 +26,7 @@ public class MenuScript : MonoBehaviour
 
     private void Start()
     {
+        longnex = GameObject.Find("Longnex");
         canMoveLeft = 5.5f;
         canMoveRight = 2.7f;
         leftSpeed = 200;
@@ -72,6 +74,8 @@ public class MenuScript : MonoBehaviour
             canMoveRight += Time.deltaTime;
             for (int i = 0; i < panels.Length; i++)
             {
+                Debug.Log(longnex);
+                longnex.transform.rotation = new Quaternion(0, 0, 0, 0);
                 panels[i].transform.Translate(Vector2.right * Time.deltaTime * rightSpeed);
             }
             
@@ -82,6 +86,7 @@ public class MenuScript : MonoBehaviour
             canMoveRight -= Time.deltaTime;
             for (int i = 0; i < panels.Length; i++)
             {
+                longnex.transform.rotation = new Quaternion(0, 180, 0, 0);
                 panels[i].transform.Translate(Vector2.left * Time.deltaTime * leftSpeed);
             }
         }
