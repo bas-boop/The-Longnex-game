@@ -52,11 +52,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Pong\Blokje.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MinigameSelection.cs" />
-     <Compile Include="Assets\Scripts\DressingRoom\ShirtDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\Kleding\DressingRoom.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\UI\ApplyClothes.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\Kleding\ShirtDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\GetClothes.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuScript.cs" />
-     <Compile Include="Assets\Scripts\DressingRoom\HeadDressingRoomButtons.cs" />
-     <Compile Include="Assets\Scripts\DressingRoom\AccessoriesDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\UI\BackButton.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\Kleding\HeadDressingRoomButtons.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\UI\BackgroundChanger.cs" />
+     <Compile Include="Assets\Scripts\DressingRoom\Kleding\AccessoriesDressingRoomButtons.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
